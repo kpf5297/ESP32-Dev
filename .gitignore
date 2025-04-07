@@ -1,0 +1,25 @@
+/.metadata/
+
+# Ignore build artifacts from ESP-IDF
+build/
+**/build/  # If you have multiple projects/subfolders, use this pattern
+
+# Generated configuration files
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults  # If generated or used
+
+# Compiled output files
+*.elf
+*.bin
+*.map
+*.o
+*.obj
+
+# (Optional) Ignore logs, Python cache, etc.
+*.log
+*.pyc
+__pycache__/
+
+# (Optional) If you don't want to share VS Code settings
+.vscode/

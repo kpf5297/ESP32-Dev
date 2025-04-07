@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1417668008,
+    "idfLocation": "/Users/kevinfox/esp/esp-idf",
+    "idfVersion": "5.5",
+    "active": true,
+    "systemGitExecutablePath": "/usr/bin/git",
+    "systemPythonExecutablePath": "/usr/bin/python3",
+    "envVars": {
+      "PATH": "/Users/kevinfox/.espressif/tools/xtensa-esp-elf-gdb/15.2_20241112/xtensa-esp-elf-gdb/bin:/Users/kevinfox/.espressif/tools/riscv32-esp-elf-gdb/15.2_20241112/riscv32-esp-elf-gdb/bin:/Users/kevinfox/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin:/Users/kevinfox/.espressif/tools/esp-clang/esp-18.1.2_20240912/esp-clang/bin:/Users/kevinfox/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin:/Users/kevinfox/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin:/Users/kevinfox/.espressif/tools/cmake/3.30.2/CMake.app/Contents/bin:/Users/kevinfox/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250226/openocd-esp32/bin:/Users/kevinfox/.espressif/tools/ninja/1.12.1/:/Users/kevinfox/.espressif/python_env/idf5.5_py3.9_env/bin:/Users/kevinfox/esp/esp-idf/tools:$PATH",
+      "IDF_COMPONENT_MANAGER": "1",
+      "OPENOCD_SCRIPTS": "/Users/kevinfox/.espressif/tools/openocd-esp32/v0.12.0-esp32-20250226/openocd-esp32/share/openocd/scripts",
+      "IDF_DEACTIVATE_FILE_PATH": "/var/folders/_2/n9hpt2g11fv5kpt52wxs55y00000gn/T/tmp6b_jq4v6idf_66647",
+      "IDF_MAINTAINER": "1",
+      "IDF_PATH": "/Users/kevinfox/esp/esp-idf",
+      "IDF_PYTHON_ENV_PATH": "/Users/kevinfox/.espressif/python_env/idf5.5_py3.9_env",
+      "ESP_IDF_VERSION": "5.5",
+      "ESP_ROM_ELF_DIR": "/Users/kevinfox/.espressif/tools/esp-rom-elfs/20241011/"
+    }
+  }
+]
