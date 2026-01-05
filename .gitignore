@@ -23,3 +23,6 @@ __pycache__/
 
 # (Optional) If you don't want to share VS Code settings
 .vscode/
+
+# macOS system files
+.DS_Store
