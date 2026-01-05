@@ -7,6 +7,13 @@
 
 lv_obj_t *ui_Screen1 = NULL;lv_obj_t *ui_Container2 = NULL;lv_obj_t *ui_Label1 = NULL;lv_obj_t *ui_Label2 = NULL;lv_obj_t *ui_Label3 = NULL;
 // event funtions
+void ui_event_Screen1( lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+if ( event_code == LV_EVENT_SCREEN_LOADED) {
+      _ui_screen_change( &ui_Screen2, LV_SCR_LOAD_ANIM_FADE_ON, 500, 5000, &ui_Screen2_screen_init);
+}
+}
 
 // build funtions
 
@@ -62,6 +69,8 @@ lv_label_set_text(ui_Label3,"28 C");
 lv_obj_set_style_text_color(ui_Label3, lv_color_hex(0xE0DDF3), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Label3, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Label3, &lv_font_montserrat_36, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+lv_obj_add_event_cb(ui_Screen1, ui_event_Screen1, LV_EVENT_ALL, NULL);
 
 }
 

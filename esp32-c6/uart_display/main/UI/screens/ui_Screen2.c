@@ -7,6 +7,13 @@
 
 lv_obj_t *ui_Screen2 = NULL;lv_obj_t *ui_Container1 = NULL;lv_obj_t *ui_LabelSSID = NULL;lv_obj_t *ui_LabelWiFiStatus = NULL;lv_obj_t *ui_BarSignal = NULL;
 // event funtions
+void ui_event_Screen2( lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+if ( event_code == LV_EVENT_SCREEN_LOADED) {
+      _ui_screen_change( &ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 500, 5000, &ui_Screen1_screen_init);
+}
+}
 
 // build funtions
 
@@ -60,6 +67,8 @@ lv_bar_set_start_value(ui_BarSignal, 0, LV_ANIM_OFF);
 lv_obj_set_width( ui_BarSignal, 150);
 lv_obj_set_height( ui_BarSignal, 10);
 lv_obj_set_align( ui_BarSignal, LV_ALIGN_CENTER );
+
+lv_obj_add_event_cb(ui_Screen2, ui_event_Screen2, LV_EVENT_ALL, NULL);
 
 }
 

@@ -96,7 +96,7 @@ static bool wifi_load_from_sd(char *ssid_out, size_t ssid_len, char *pass_out, s
         if (!has_pass) {
             pass_out[0] = '\0';
         }
-        SD_DeleteFile(WIFI_CRED_PATH);
+        // SD_DeleteFile(WIFI_CRED_PATH);
         ESP_LOGI(WIFI_TASK_TAG, "Loaded Wi-Fi SSID from SD");
         return true;
     }
