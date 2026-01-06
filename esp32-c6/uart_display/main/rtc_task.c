@@ -2,6 +2,7 @@
 
 #include "RTC_Clock.h"
 #include "TempSensor.h"
+#include "DebugConsole.h"
 #include "esp_log.h"
 #include "freertos/task.h"
 #include <stdio.h>
@@ -33,6 +34,7 @@ static void rtcClockTask(void *arg)
     while (1) {
         RTC_Clock_GetTime(tbuf, sizeof(tbuf));
         (void)xQueueSend(rtcQueue, tbuf, 0);
+        Debug_Log("RTC: tick at %s", tbuf);
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
@@ -57,6 +59,7 @@ static void tempTask(void *arg)
         if (TempSensor_ReadCelsius(&temp_c)) {
             (void)snprintf(tbuf, sizeof(tbuf), "%.1f C", (double)temp_c);
             (void)xQueueSend(tempQueue, tbuf, 0);
+            Debug_Log("TEMP: %.1f C", (double)temp_c);
         }
         vTaskDelay(pdMS_TO_TICKS(2000));
     }

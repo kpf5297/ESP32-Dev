@@ -6,6 +6,7 @@
 #include <sys/unistd.h>
 
 #include "SD_SPI.h"
+#include "DebugConsole.h"
 #include "driver/sdspi_host.h"
 #include "driver/spi_common.h"
 #include "esp_err.h"
@@ -44,6 +45,7 @@ bool SD_Mount(void)
     esp_err_t ret = spi_bus_initialize(host.slot, &bus_cfg, SDSPI_DEFAULT_DMA);
     if (ret != ESP_OK && ret != ESP_ERR_INVALID_STATE) {
         ESP_LOGE(SD_STORAGE_TAG, "SPI bus init failed: %s", esp_err_to_name(ret));
+        Debug_Log("SD: SPI bus init failed: %s", esp_err_to_name(ret));
         return false;
     }
 
@@ -54,10 +56,12 @@ bool SD_Mount(void)
     ret = esp_vfs_fat_sdspi_mount(SD_MOUNT_POINT, &host, &slot_config, &mount_config, &card);
     if (ret != ESP_OK) {
         ESP_LOGE(SD_STORAGE_TAG, "Mount failed: %s", esp_err_to_name(ret));
+        Debug_Log("SD: mount failed: %s", esp_err_to_name(ret));
         return false;
     }
 
     s_sd_mounted = true;
+    Debug_Log("SD: mounted successfully");
     return true;
 }
 

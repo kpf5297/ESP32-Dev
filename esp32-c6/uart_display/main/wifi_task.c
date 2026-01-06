@@ -4,6 +4,7 @@
 
 #include "SD_Storage.h"
 #include "WiFi_Manager.h"
+#include "DebugConsole.h"
 #include "esp_log.h"
 #include "freertos/task.h"
 #include "lvgl.h"
@@ -98,6 +99,7 @@ static bool wifi_load_from_sd(char *ssid_out, size_t ssid_len, char *pass_out, s
         }
         // SD_DeleteFile(WIFI_CRED_PATH);
         ESP_LOGI(WIFI_TASK_TAG, "Loaded Wi-Fi SSID from SD");
+        Debug_Log("WIFI: loaded credentials from SD");
         return true;
     }
 
@@ -145,6 +147,7 @@ static void wifi_task(void *arg)
         strlcpy(s_wifi_ssid, WIFI_DEFAULT_SSID, sizeof(s_wifi_ssid));
         strlcpy(s_wifi_pass, WIFI_DEFAULT_PASS, sizeof(s_wifi_pass));
         wifi_send_status("WIFI:USING_DEFAULTS");
+        Debug_Log("WIFI: using default Wi-Fi credentials");
     }
 
     bool last_connected = !WiFi_IsConnected();
@@ -157,6 +160,11 @@ static void wifi_task(void *arg)
 
         if (connected != last_connected) {
             wifi_send_status(connected ? "WIFI:CONNECTED" : "WIFI:DISCONNECTED");
+            if (connected) {
+                Debug_Log("WIFI: connected to %s", s_wifi_ssid);
+            } else {
+                Debug_Log("WIFI: disconnected");
+            }
             last_connected = connected;
         }
 

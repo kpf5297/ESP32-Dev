@@ -17,6 +17,7 @@
 #include "TempSensor.h"
 #include "rtc_task.h"
 #include "lvgl.h"
+#include "DebugConsole.h"
 
 static void rtc_ui_timer_cb(lv_timer_t *timer)
 {
@@ -31,13 +32,15 @@ void app_main(void)
     RGB_Example();
     LCD_Init();
     BK_Light(50);
+    LVGL_Init();                            // returns the screen object
+
+    ui_init();
+    DebugConsole_Init();
+
     SD_Mount();
     WiFi_Init();
     wifi_task_start();
     wifi_signal_task_start();
-    LVGL_Init();                            // returns the screen object
-
-    ui_init();
     wifi_ui_timer_init();
     uic_Label6 = ui_Label1;
     uic_LabelDate = ui_Label2;
