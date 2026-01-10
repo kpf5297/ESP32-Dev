@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "RTC_Clock.c"
+        "rtc_task.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        freertos
+        lvgl
+        app_log
+        system_snapshot
+        temp_sensor
+)

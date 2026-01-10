@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "network_debug_task.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        freertos
+        lvgl
+    PRIV_INCLUDE_DIRS
+        "${CMAKE_CURRENT_LIST_DIR}/../lvgl_ui"
+        "${CMAKE_CURRENT_LIST_DIR}/../lvgl_ui/UI"
+        "${CMAKE_CURRENT_LIST_DIR}/../lvgl_ui/UI/screens"
+)

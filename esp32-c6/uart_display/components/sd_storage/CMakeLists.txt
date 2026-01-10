@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "SD_Storage.c"
+        "SD_Card/SD_SPI.c"
+    INCLUDE_DIRS
+        "include"
+        "SD_Card"
+    REQUIRES
+        fatfs
+        driver
+        spi_flash
+        app_log
+)

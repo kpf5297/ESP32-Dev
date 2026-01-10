@@ -1,0 +1,9 @@
+idf_component_register(
+    SRCS
+        "app_log.c"
+        "app_log_backend_uart.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        freertos
+)

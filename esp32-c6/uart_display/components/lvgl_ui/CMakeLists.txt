@@ -1,0 +1,23 @@
+idf_component_register(
+    SRCS
+        "LVGL_Example.c"
+        "UI/ui.c"
+        "UI/ui_helpers.c"
+        "UI/screens/ui_ScreenSplash.c"
+        "UI/screens/ui_ScreenWiFi.c"
+        "UI/screens/ui_ScreenDebug.c"
+        "UI/screens/ui_ScreenClock.c"
+        "UI/components/ui_comp_hook.c"
+    INCLUDE_DIRS
+        "."
+        "include"
+        "UI"
+        "LVGL_UI"
+    REQUIRES
+        lvgl
+        wifi_manager
+        rtc_clock
+        network_debug
+        debug_console
+        main
+)

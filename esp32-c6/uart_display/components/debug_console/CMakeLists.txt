@@ -1,0 +1,12 @@
+idf_component_register(
+    SRCS
+        "DebugConsole.c"
+        "app_log_backends.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        freertos
+        lvgl
+        app_log
+        rtc_clock
+)

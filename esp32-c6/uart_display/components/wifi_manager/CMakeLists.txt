@@ -1,0 +1,16 @@
+idf_component_register(
+    SRCS
+        "WiFi_Manager.c"
+        "wifi_task.c"
+        "wifi_signal_task.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        esp_wifi
+        esp_netif
+        nvs_flash
+        freertos
+        lvgl
+        app_log
+        sd_storage
+)
